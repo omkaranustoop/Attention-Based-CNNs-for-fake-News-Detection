@@ -13,3 +13,5 @@ This Directory Consists for the following files :-
 
 **4.w2v_model_New** :- Custom Word2Vec Model trained with minimum word frequency 2.
 
+**5.Graphs** :- This Folder Contains Training and Validation Accuracy and Training and Validation Loss Graphs for the various Architectures used for Experiments.
+

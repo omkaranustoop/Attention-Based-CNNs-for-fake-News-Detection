@@ -81,27 +81,80 @@ The results are as Follows -
 
 | Label                 | Precision         | Recall            | f1-Score          |
 | -------------         |:-----------------:|:-----------------:|:-----------------:|
-| 0(Non-ExoPlanet)      | 1.00              | 1.00              | 1.00              |
-| 1(Exo-Planet)         | 1.00              | 0.60              | 0.75              |
+| 0(Real Article)       | 0.96              | 0.98              | 0.97              |
+| 1(Fake Article)       | 0.29              | 0.19              | 0.23              |
 
 **Confusion Matrix**
 
-| Label                 | 0(Non-ExoPlanets) | 1(Exo-Planet)    |
+| Label                 | 0(Real Article)   | 1(Fake Article)  |
 | -------------         |:-----------------:|:-----------------:
-| 0(Non-ExoPlanets)     | 565               | 0                |
-| 1(Exo-Planet)         | 2                 | 3                |
+| 0(Real Article)       | 2301              | 48               |
+| 1(Fake Article)       | 86                | 20               |
 
 **Training and Validation Loss and Accuracy Curves**
 
-![](Graphs/Training_And_validation_Accuracy_Multi-Channel.PNG)
-![](Graphs/Training_And_validation_Loss_Multi-Channel.PNG)
+![](Graphs/Custom%20Word2Vec%20%2B%20CNNs/Accuracy.PNG)
+![](Graphs/Custom%20Word2Vec%20%2B%20CNNs/Loss.PNG)
 
 **Take Away**
 
-The test Set had 565 Non-ExoPlanets and 5 Exo-Planets. The  above model identified all Non-ExoPlanets Correctly without Mis-Classification. Out of 5 ExoPlanets it identified 3 Correctly. Hence, we can conclude that the above model succeeds in correctly identifying Non-ExoPlanets, although there is error in classifying Exo-Planets.
+The test Set had 2387 Real Articles and 68 Fake Articles. The above model identified 2301/2387 Real Articles Correctly. Out of 68 Fake Articles it identified 20 as Fake. Hence, we can conclude that the above model is better at correctly identifying Real Arcticles than the previous Model, whereas it's performance is worse at Identifying Fake Articles.
+
+
+**3. Glove Embedding + CNNs** :-
+
+The results are as Follows -
+
+
+| Label                 | Precision         | Recall            | f1-Score          |
+| -------------         |:-----------------:|:-----------------:|:-----------------:|
+| 0(Real Article)       | 0.99              | 0.96              | 0.97              |
+| 1(Fake Article)       | 0.01              | 0.25              | 0.01              |
+
+**Confusion Matrix**
+
+| Label                 | 0(Real Article)   | 1(Fake Article)  |
+| -------------         |:-----------------:|:-----------------:
+| 0(Real Article)       | 2357              | 3                |
+| 1(Fake Article)       | 94                | 1                |
+
+**Training and Validation Loss and Accuracy Curves**
+
+![](Graphs/Glove%20%2B%20CNNs/Accuracy.PNG)
+![](Graphs/Glove%20%2B%20CNNs/Loss.PNG)
+
+**Take Away**
+
+The test Set had 2451 Real Articles and 4 Fake Articles. The above model identified 2357/2451 Real Articles Correctly. Out of 4 Fake Articles it identified 1 as Fake. Hence, we can conclude that the above model is so far the best at correctly identifying Real Articles, whereas it's performance is relatively the worst at Identifying Fake Articles.
+
+**Custom Word2Vec + Attention + CNNs** :-
+
+The results are as Follows -
+
+
+| Label                 | Precision         | Recall            | f1-Score          |
+| -------------         |:-----------------:|:-----------------:|:-----------------:|
+| 0(Real Article)       | 0.97              | 0.95              | 0.96              |
+| 1(Fake Article)       | 0.19              | 0.30              | 0.23              |
+
+**Confusion Matrix**
+
+| Label                 | 0(Real Article)   | 1(Fake Article)  |
+| -------------         |:-----------------:|:-----------------:
+| 0(Real Article)       | 2228              | 126              |
+| 1(Fake Article)       | 71                | 30               |
+
+**Training and Validation Loss and Accuracy Curves**
+
+![](Graphs/Custom%20Word2Vec%20%2B%20Customised%20AlexNet/Accuracy.PNG)
+![](Graphs/Custom%20Word2Vec%20%2B%20Customised%20AlexNet/Loss.PNG)
+
+**Take Away**
+
+The test Set had 2299 Real Articles and 156 Fake Articles. The above model identified 2228/2299 Real Articles Correctly. Out of 156 Fake Articles it identified 30 as Fake. Hence, we can conclude that the above model is the best among all models at correctly identifying Real Arcticles, whereas it's performance is 3rd best at Identifying Fake Articles(The first two models have relatively better Performance).
 
 ## Conclusion
 
-The First Model is Good at Detecting Exo-Planets at Cost of Non-ExoPlanets. The Second Model Detects Non-ExoPlanets Accurately. Hence we can combine the two models together to make a reasonable prediction. When both the models predict something as Exo-Planet/Non-ExoPlanet, we can be fairly sure of our Prediction(Since Models with opposite bias agree on a prediction).
+Adding attention layer helps in Improving detection of Real Articles. However, it results in Mis-Classification of Fake Articles as Real Ones.
 
 

@@ -5,7 +5,7 @@ An NLP Task aimed at Predicting whether a given news article is fake or real by 
 
 This Directory Consists for the following files :-
 
-**1.NoteBooks Training Word2Vec** :- This folder Contains Jupyter Notebooks on training a customised Word2Vec Model using Fake News Dataset.
+**1.NoteBooks Training Word2Vec** :- This folder Contains a Jupyter Notebook on training a customised Word2Vec Model using Fake News Dataset. The Word-Embedding Dimension and Word-Frequency-Count can be changed for Experimenation.
 
 **2.NoteBooks Fake News Prediction** :- This folder contains Notebooks on various experiments performed for Fake News Prediction, for eg. Using Custom Trained Word2Vec + Attention Model + CNNs , Using Glove Embedding + CNNs etc. Results from all experiments are summarised in the readme file.
 

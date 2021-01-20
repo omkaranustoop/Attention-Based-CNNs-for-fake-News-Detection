@@ -3,7 +3,7 @@ An NLP Task aimed at Predicting whether a given news article is fake or real by 
 
 ## Directory Structure :-
 
-This Directory Consists for the following files :-
+This Directory Consists of the following files :-
 
 **1.NoteBooks Training Word2Vec** :- This folder Contains a Jupyter Notebook on training a customised Word2Vec Model using Fake News Dataset. The Word-Embedding Dimension and Word-Frequency-Count can be changed for Experimenation.
 
